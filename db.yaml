@@ -3,7 +3,7 @@
   become: yes
   vars:
    login_host: db.expensedevops.online
-  vars_promt:
+  vars_prompt:
    - name: database_password
      prompt: please enter password
      private : no
