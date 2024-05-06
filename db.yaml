@@ -28,10 +28,10 @@
        executable: pip3.9
    - name: check mysql server root password
      community.mysql.mysql_info:
-       login_user: root
-       login_password: {{ database_password }}
-       login_host: {{ login_host }}
-       filter: version
+      login_user: root
+      login_password: {{ database_password }}
+      login_host: {{ login_host }}
+      filter: version
      ignore_errors: yes
      register: output
 
