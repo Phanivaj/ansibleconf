@@ -38,6 +38,7 @@
    - name: print output
      ansible.builtin.debug:
       msg: "{{output}}"
+      
    - name: setup password
      ansible.builtin.command: "mysql_secure_installation --set-root-pass {{ database_password }}"
      when: output.failed is true
