@@ -12,16 +12,19 @@
      ansible.builtin.dnf:
       name : mysql_server
       state: latest
+
    - name: start and enable mysql server service
      ansible.builtin.service:
       name: mysqld
       state: started
       enabled: yes
+
    - name: install dependencies
      ansible.builtin.pip:
        name : 
-        - PyMysql
+        - PyMySql
         - cryptography
+        - MySQLdb
        executable: pip3.9
     
    
