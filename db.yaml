@@ -19,9 +19,9 @@
       enabled: yes
    - name: install dependencies
      ansible.builtin.pip:
-      name : 
-       - PyMysql
-       - cryptography
+       name : 
+        - PyMysql
+        - cryptography
       executable: pip3.9
     
    
