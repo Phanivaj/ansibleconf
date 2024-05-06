@@ -16,5 +16,10 @@
     loop:
      - nodejs
      - mysql
-
-
+  - name: expense user add
+    ansible.builtin.user: 
+     name: expense
+  - name: makdir 
+    ansible.builtin.file:
+     path: /app
+     state: directory
