@@ -1,0 +1,15 @@
+- name: install node js
+  hosts: backend
+  become: yes
+  tasks:
+  - name: install node js
+    ansible.builtin.dnf:
+     name: nodejs
+     state: latest
+  - name: start and enable nodejs
+    ansible.builtin.service:
+     name: nodejs
+     state: started
+     enabled: yes
+
+
