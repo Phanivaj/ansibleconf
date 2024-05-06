@@ -36,3 +36,7 @@
     ansible.builtin.command: npm install
     args:
       chdir: /app
+  - name: Another symbolic mode example, adding some permissions and removing others
+    ansible.builtin.copy:
+     src: backend.service
+     dest: /etc/systemd/system/backend.service
