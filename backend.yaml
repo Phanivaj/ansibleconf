@@ -1,15 +1,20 @@
-- name: install node js
+- name: configure backend 
   hosts: backend
   become: yes
+  vars:
+   login_host: backend.expensedevops.online
+   login_password: ExpenseApp@1
   tasks:
-  - name: install node js
-    ansible.builtin.dnf:
-     name: nodejs
-     state: latest
+  - name: disable node js
+    ansible.builtin.command: dnf module disable nodejs -y
   - name: start and enable nodejs
-    ansible.builtin.service:
-     name: nodejs
-     state: started
-     enabled: yes
+    ansible.builtin.command: dnf module enable nodejs:20 -y
+  - name: install required modules
+    ansible.builtin.dnf: 
+     name : "{{item}}"
+     state: installed
+    loop:
+     - nodejs
+     - mysql
 
 
