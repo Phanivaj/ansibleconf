@@ -24,7 +24,7 @@
        name : 
         - PyMySql
         - cryptography
-        - MySQLdb
+        
        executable: pip3.9
     
    
