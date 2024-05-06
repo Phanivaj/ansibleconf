@@ -1,0 +1,21 @@
+- name : setup db
+  hosts: db
+  become: yes
+  vars:
+   login_host: db.expensedevops.online
+  vars_promt:
+   - name: database_password
+     prompt: please enter password
+     private : no
+  tasks:
+   - name: install my sql server
+     ansible.builtin.dnf:
+      name : mysql_server
+      state: latest
+   - name: start and enable mysql server service
+     ansible.builtin.service:
+      name: mysqld
+      state: started
+      enabled: yes
+    
+   
